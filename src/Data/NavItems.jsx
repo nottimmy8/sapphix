@@ -7,7 +7,7 @@ const NavItems = ({ onClick }) => {
       {navLinks.map(({ id, href, name }) => (
         <li
           key={id}
-          className="text-gray-950 hover:text-gray-800  max-sm:w-full max-sm:rounded-md py-2 max-sm:px-5 text-base cursor-pointer font-semibold"
+          className=" font-playfair text-gray-950 hover:text-gray-800  max-sm:w-full max-sm:rounded-md py-2 max-sm:px-5 text-base cursor-pointer font-semibold"
           onClick={onClick}
         >
           <a href={href}> {name} </a>

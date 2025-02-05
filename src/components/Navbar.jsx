@@ -20,27 +20,27 @@ const Navbar = () => {
 
   return (
     <div className="fixed top-0 left-0 right-0 z-50 bg-white shadow-md">
-      <div className="max-w-7xl  mx-auto">
-        <div className="flex justify-between items-center px-5 py-5 mx-auto sm:px-12 ">
+      <div className="max-w-6xl mx-auto">
+        <div className="flex justify-between items-center  py-5 px-4 overflow-hidden  ">
           {/* toggleMenu */}
           <div className="flex md:hidden" onClick={toggleMenu}>
             {isOpen ? (
-              <IoClose size={25} className="cursor-pointer sm:hidden" />
+              <IoClose size={25} className="cursor-pointer md:hidden" />
             ) : (
-              <IoMenu size={25} className="cursor-pointer sm:hidden" />
+              <IoMenu size={25} className="cursor-pointer md:hidden" />
             )}
           </div>
 
           {/*  */}
           <div className="flex items-center space-x-8 ">
             {/* LOGO  */}
-            <div>
+            <div className="aspect-square w-10 ">
               {" "}
-              <img src={logo} alt="" className=" " />
+              <img src={logo} alt="" className="w-full h-full object-fit" />
             </div>
 
             {/* NAVLISTITEMS  */}
-            <div className="hidden sm:flex">
+            <div className="hidden md:flex">
               <NavItems />
             </div>
           </div>
@@ -48,7 +48,7 @@ const Navbar = () => {
           {/* right side */}
           <div className=" flex items-center space-x-7">
             {/* Search Input */}
-            <div className="rounded-xl  border border-black items-center px-2 w-[300px] hidden sm:flex">
+            <div className="rounded-xl  border border-black items-center px-2 w-[300px] hidden md:flex">
               <IoMdSearch size={25} className="text-black" />
               <input
                 className="bg-transparent p-2 w-full focus:outline-none text-black"
@@ -75,7 +75,7 @@ const Navbar = () => {
 
       {/* MOBILE MENU */}
       <div
-        className="absolute left-0 right-0 bg-gray-900 backdrop-blur-sm transition-all duration-300 ease-in-out overflow-hidden z-20 mx-auto sm:hidden block"
+        className="absolute left-0 right-0 bg-black/30 backdrop-blur-2xl transition-all duration-300 ease-in-out overflow-hidden z-20 mx-auto sm:hidden block"
         style={{
           display: isOpen ? "block" : "none",
           height: "50vh",

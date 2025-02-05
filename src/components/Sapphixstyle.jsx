@@ -3,12 +3,16 @@ import product from "../constants/product";
 import Slider from "react-slick";
 import { CustomPrevArrow, CustomNextArrow } from "../CustomArrows.jsx";
 
-const Accessorise = () => {
+const Sapphixstyle = () => {
+  const categories = ["accessorise"];
+  const filteredAccessorise = categories.flatMap((category) =>
+    product.filter((item) => item.category === category)
+  );
   var settings = {
-    dots: true,
+    dots: false,
     infinite: false,
     speed: 500,
-    slidesToShow: 5,
+    slidesToShow: 4,
     slidesToScroll: 1,
     nextArrow: <CustomNextArrow />,
     prevArrow: <CustomPrevArrow />,
@@ -17,7 +21,7 @@ const Accessorise = () => {
         breakpoint: 1024,
         settings: {
           slidesToShow: 1,
-          slidesToScroll: 3,
+          slidesToScroll: 2,
           infinite: true,
           dots: true,
         },
@@ -39,33 +43,22 @@ const Accessorise = () => {
       },
     ],
   };
-
-  const categories = ["accessorise"];
-  const filteredAccessorise = categories.flatMap((category) =>
-    product.filter((item) => item.category === category)
-  );
-
   return (
     <div className=" w-full p-[58px]  ">
       <h1 className=" text-3xl font-bold font-playfair text-center">
-        Accessorise with us
+        Tag @Sapphix to share your style
       </h1>
-      <div className="  max-w-6xl p-6 mx-auto">
+      <div className="  max-w-6xl py-6 mx-auto">
         <Slider {...settings} className="w-full">
           {filteredAccessorise.map((item, index) => (
             <div key={index} className="mx-2">
-              <div className="shadow-md md:w-[200px] w-[295px] bg-bluelight  mx-auto">
+              <div className="shadow-md w-[205px] h-[300px] md:w-[260px] aspect-square bg-bluelight  mx-auto">
                 {console.log(item)}
                 <img
                   src={item.image}
                   alt=""
-                  className="w-full h-[200px] object-cover  rounded-t-2xl "
+                  className="w-full h-full  object-cover  rounded-t-2xl "
                 />
-                <div className=" bg-white text-textblack text-center w-full py-4 rounded-b-2xl  ">
-                  <h2 className="text-base sm:text-sm font-semibold ">
-                    {item.title}{" "}
-                  </h2>
-                </div>
               </div>
             </div>
           ))}
@@ -75,4 +68,4 @@ const Accessorise = () => {
   );
 };
 
-export default Accessorise;
+export default Sapphixstyle;

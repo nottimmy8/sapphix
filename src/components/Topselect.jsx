@@ -8,18 +8,18 @@ const Topselect = () => {
     .slice(0, 5); // Limit to 5 items
 
   return (
-    <div className=" w-full mx-auto min-h-[444px]   bg-bluelight ">
-      <div className=" max-w-7xl p-12 mx-auto">
+    <div className=" w-full p-12   bg-bluelight ">
+      <div className=" max-w-6xl mx-auto">
         <div className=" flex flex-col justify-center items-center">
           <h3 className=" md:text-3xl  text-xl font-bold text-textblack">
             New-in this week
           </h3>
           {/* categories */}
-          <div className=" grid grid-cols-1 md:grid-cols-5 gap-8 mt-6  ">
+          <div className=" flex flex-wrap flex-col md:flex-row justify-center md:justify-between w-full  gap-4 mt-6  ">
             {filteredProducts.map((item, index) => (
               <div
                 key={index}
-                className="  shadow-md md:w-[200px] w-[295px]   "
+                className="  shadow-md md:w-[200px] aspect-square  "
               >
                 {console.log(item)}
                 <img
